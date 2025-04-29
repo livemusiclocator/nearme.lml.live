@@ -10,7 +10,8 @@ function haversine(lat1, lon1, lat2, lon2) {
     const toRad = (angle) => angle * (Math.PI / 180);
     const deltaLat = toRad(lat2 - lat1);
     const deltaLon = toRad(lon2 - lon1);
-    const a = Math.sin(deltaLat / 2) ** 2 + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(deltaLon / 2) ** 2;
+    const a = Math.sin(deltaLat / 2) ** 2
+		+ Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(deltaLon / 2) ** 2;
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
     return R * c;
@@ -42,13 +43,9 @@ async function todaysGigs({ lat, lng, radius, loc, sortBy }) {
 		const byStartTime = (a, b) =>
 			new Date(a.start_timestamp) - new Date(b.start_timestamp);
 
-		const byDistance = (a, b) => {
-			console.log(a.venue.name, a.venue.latitude, a.venue.longitude, lat, lng, haversine(a.venue.latitude, a.venue.longitude, lat, lng));
-			console.log(b.venue.name, b.venue.latitude, b.venue.longitude, haversine(b.venue.latitude, b.venue.longitude, lat, lng));
-			const d = haversine(a.venue.latitude, a.venue.longitude, lat, lng)
+		const byDistance = (a, b) =>
+			haversine(a.venue.latitude, a.venue.longitude, lat, lng)
 				- haversine(b.venue.latitude, b.venue.longitude, lat, lng);
-			return d;
-		}
 
         return gigs
 			.filter(withinRadius)
@@ -76,14 +73,15 @@ document.addEventListener("alpine:init", () => {
 			sortBy: "distance",
 			fetchGigs: async function () {
 				const params = new URLSearchParams(window.location.search);
-				const lat = params.get("lat") || DEFAULT_LAT;
-				const lng = params.get("lng") || DEFAULT_LNG;
-				const radius = params.get("radius") || DEFAULT_RADIUS;
-				const loc = params.get("location") || DEFAULT_LOCATION;
-
 				this.gigs = [];
 				this.loadingGigs = true;
-				this.gigs = await todaysGigs({ lat, lng, radius, loc, sortBy: this.sortBy });
+				this.gigs = await todaysGigs({
+					lat: params.get("lat") || DEFAULT_LAT,
+					lng: params.get("lng") || DEFAULT_LNG,
+					radius: params.get("radius") || DEFAULT_RADIUS,
+					loc: params.get("location") || DEFAULT_LOCATION,
+					sortBy: this.sortBy
+				});
 				this.loadingGigs = false;
 			},
 			handleSortChange: function (e) {
