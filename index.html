@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<meta name="description" content="" />
+		<title>Near me | Live Music Locator</title>
+		<link rel="stylesheet" href="/stylesheet.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <script type="text/javascript" src="/script.js"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+	</head>
+	<body x-data="gigs">
+		<header>
+			<a href="https://lml.live" target="_blank">
+				<img id="logo" src="/lml_logo.png" alt="Live Music Locator logo" />
+			</a>
+			<h1>Gigs near me</h1>
+		</header>
+		<form>
+			<label for="sort">Sort by</label>
+			<select id="sort" x-on:change="handleSortChange">
+				<template x-for="option in sortOptions">
+					<option
+						x-bind:value="option.value"
+						x-text="option.label"
+						x-bind:selected="sortBy == option.value"
+					></option>
+				</template>
+			</select>
+		</form>
+		<template x-if="loadingGigs">
+			<p>Loading...</p>
+		</template>
+		<template x-if="!loadingGigs && gigs.length == 0">
+			<p>No gigs nearby... :(</p>
+		</template>
+		<ul id="gig-container" x-show="gigs">
+			<template x-for="gig in gigs">
+				<li class="gig-tile">
+					<div class="left">
+						<h2 x-text="gig.name"></h2>
+						<small x-text="gig.genre_tags.join(', ')"></small>
+						<p>
+							<span x-text="gig.venue.name"></span> &mdash; <span x-text="formatTime(gig.start_time)"></span>
+						</p>
+					</div>
+					<div class="right">
+						<a href="gig.venue.location_url" target="_blank">Directions</a>
+					</div>
+				</li>
+			</template>
+		</ul>
+		<footer>
+			<p>
+				Live music data courtesy of <a href="https://lml.live" target="_blank">Live Music Locator</a>
+			</p>
+		</footer>
+	</body>
+</html>

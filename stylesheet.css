@@ -1,0 +1,68 @@
+:root {
+	--border-color: #e6e6e6;
+	--background-color: aliceblue;
+	--accent-color: #337ab7;
+	--box-shadow: rgba(68, 74, 87, 0.05) 0px 2px 6px 0px, rgba(68, 74, 87, 0.1) 0px 1px 3px 0px;
+}
+
+body {
+	background-color: var(--background-color);
+	text-align: center;
+	font-family: Arial, sans-serif;
+}
+
+ul {
+	padding: 0;
+}
+
+ul li {
+	list-style-type: none;
+}
+
+h2 {
+	font-size: 1rem;
+	color: var(--accent-color);
+}
+
+#logo {
+	width: 6rem;
+}
+
+#gig-container {
+	width: 30rem;
+	max-width: 90vw;
+	margin: auto;
+	margin-top: 1rem;
+}
+
+.gig-tile {
+	background-color: #fff;
+	border-color: var(--border-color);
+	border-radius: 6px;
+	box-shadow: var(--box-shadow);
+	padding: 0.5rem;
+	text-align: left;
+	display: flex;
+	justify-content: space-between;
+}
+
+@media only screen and (max-width: 480px) {
+	.gig-tile {
+		flex-direction: column;
+	}
+}
+
+.gig-tile:not(:last-child) {
+	margin-bottom: 1rem;
+}
+
+.gig-tile h2,
+.gig-tile p,
+.gig-tile small,
+.gig-tile a {
+	margin: 0.25rem;
+}
+
+.gig-tile small {
+	font-style: italic;
+}
