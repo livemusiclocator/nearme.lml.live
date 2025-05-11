@@ -14,7 +14,7 @@ https://nearme.lml.live?lat=<lat>&lng=<lng>&radius=<radius>&location=<loc>
 
 * `lat`: latitude of the coordinate. Defaults to the corner of Johnston St and Brunswick St, Fitzroy.
 * `lng`: longitude of the coordinate. Defaults to the corner of Johnston St and Brunswick St, Fitzroy.
-* `radius`: only gigs within this radius are included. Defaults to 5km.
+* `radius`: only gigs within this radius are included. Units are in meters. Defaults to 5,000m.
 * `location`: the location to pass to the LML API. Defaults to "melbourne".
 
 You can get the latitude and longitude for a location by looking it up on
