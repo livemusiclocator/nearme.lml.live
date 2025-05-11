@@ -2,7 +2,9 @@
 	--border-color: #e6e6e6;
 	--background-color: aliceblue;
 	--accent-color: #337ab7;
+	--accent-color-light: #337ab71e;
 	--box-shadow: rgba(68, 74, 87, 0.05) 0px 2px 6px 0px, rgba(68, 74, 87, 0.1) 0px 1px 3px 0px;
+	font-size: 24px;
 }
 
 body {
@@ -24,6 +26,10 @@ h2 {
 	color: var(--accent-color);
 }
 
+footer {
+	margin-top: 1rem;
+}
+
 #logo {
 	width: 6rem;
 }
@@ -42,14 +48,6 @@ h2 {
 	box-shadow: var(--box-shadow);
 	padding: 0.5rem;
 	text-align: left;
-	display: flex;
-	justify-content: space-between;
-}
-
-@media only screen and (max-width: 480px) {
-	.gig-tile {
-		flex-direction: column;
-	}
 }
 
 .gig-tile:not(:last-child) {
@@ -65,4 +63,12 @@ h2 {
 
 .gig-tile small {
 	font-style: italic;
+}
+
+.genre-tag {
+	background-color: var(--accent-color-light);
+	border: 1px solid var(--accent-color);
+	color: var(--accent-color);
+	border-radius: 5px;
+	padding: 0 0.25rem;
 }

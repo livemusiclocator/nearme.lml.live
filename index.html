@@ -38,23 +38,21 @@
 		<ul id="gig-container" x-show="gigs">
 			<template x-for="gig in gigs">
 				<li class="gig-tile">
-					<div class="left">
-						<h2 x-text="gig.name"></h2>
-						<small x-text="gig.genre_tags.join(', ')"></small>
-						<p>
-							<span x-text="gig.venue.name"></span> &mdash; <span x-text="formatTime(gig.start_time)"></span>
-						</p>
-					</div>
-					<div class="right">
-						<a x-bind:href="gig.venue.location_url" target="_blank">Directions</a>
-					</div>
+					<h2 x-text="gig.name"></h2>
+					<template x-for="tag in gig.genre_tags">
+						<small class="genre-tag" x-text="tag"></small>
+					</template>
+					<p>
+						<span x-text="gig.venue.name"></span> &mdash; <span x-text="formatTime(gig.start_time)"></span>
+					</p>
+					<a x-bind:href="gig.venue.location_url" target="_blank">Directions</a>
 				</li>
 			</template>
 		</ul>
 		<footer>
-			<p>
+			<small>
 				Live music data courtesy of <a href="https://lml.live" target="_blank">Live Music Locator</a>
-			</p>
+			</small>
 		</footer>
 	</body>
 </html>
