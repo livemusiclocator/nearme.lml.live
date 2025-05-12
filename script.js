@@ -18,6 +18,10 @@ function haversine(lat1, lon1, lat2, lon2) {
 }
 
 function formatTime(time) {
+	if (!time) {
+		return;
+	}
+
 	const splits = time.split(":");
 	const hours = parseInt(splits[0]);
 	const minutes = splits[1];
@@ -27,7 +31,10 @@ function formatTime(time) {
 }
 
 async function todaysGigs({ lat, lng, radius, loc, sortBy }) {
-	const today = new Date().toISOString().split("T")[0];
+	let today = new Date()
+	today.setUTCHours(0,0,0,0);
+	today = today.toISOString().split("T")[0];
+
 	const queryUrl = `${API_URL}/gigs/query?date_from=${today}&date_to=${today}&location=${loc}`;
 
 	lat = parseFloat(lat);
