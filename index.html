@@ -43,7 +43,12 @@
 						<small class="genre-tag" x-text="tag"></small>
 					</template>
 					<p>
-						<span x-text="gig.venue.name"></span> &mdash; <span x-text="formatTime(gig.start_time)"></span>
+						<span x-text="gig.venue.name"></span>
+						<template x-if="gig.start_time != null">
+							<span>
+								&mdash; <span x-text="formatTime(gig.start_time)"></span>
+							</span>
+						</template>
 					</p>
 					<a x-bind:href="gig.venue.location_url" target="_blank">Directions</a>
 				</li>
