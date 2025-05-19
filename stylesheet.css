@@ -65,10 +65,19 @@ footer {
 	font-style: italic;
 }
 
+.genre-tag-container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
 .genre-tag {
 	background-color: var(--accent-color-light);
 	border: 1px solid var(--accent-color);
 	color: var(--accent-color);
 	border-radius: 5px;
 	padding: 0 0.25rem;
+}
+
+.spacious {
+	margin: 5rem 0;
 }

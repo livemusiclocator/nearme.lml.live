@@ -47,6 +47,13 @@ async function todaysGigs({ lat, lng, radius, loc, sortBy }) {
 		const withinRadius = (g) =>
 			haversine(g.venue.latitude, g.venue.longitude, lat, lng) < radius;
 
+		// Assume gigs without a timestamp are in the future, otherwise they
+		// would never show up.
+		const inTheFuture = (g) =>
+			g.start_timestamp
+				? new Date(g.start_timestamp) > new Date()
+				: true;
+
 		const byStartTime = (a, b) =>
 			new Date(a.start_timestamp) - new Date(b.start_timestamp);
 
@@ -56,6 +63,7 @@ async function todaysGigs({ lat, lng, radius, loc, sortBy }) {
 
         return gigs
 			.filter(withinRadius)
+			.filter(inTheFuture)
 			.sort((a, b) =>
 				sortBy == "start_time" ? byStartTime(a, b) : byDistance(a, b)
 			);

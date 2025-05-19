@@ -30,18 +30,25 @@
 			</select>
 		</form>
 		<template x-if="loadingGigs">
-			<p>Loading...</p>
+			<p class="spacious">Loading...</p>
 		</template>
 		<template x-if="!loadingGigs && gigs.length == 0">
-			<p>No gigs nearby... :(</p>
+			<p class="spacious">
+				No gigs nearby...
+				<br />
+				<br />
+				See what else is on <a href="https://lml.live">lml.live</a>.
+			</p>
 		</template>
 		<ul id="gig-container" x-show="gigs">
 			<template x-for="gig in gigs">
 				<li class="gig-tile">
 					<h2 x-text="gig.name"></h2>
-					<template x-for="tag in gig.genre_tags">
-						<small class="genre-tag" x-text="tag"></small>
-					</template>
+					<div class="genre-tag-container">
+						<template x-for="tag in gig.genre_tags">
+							<small class="genre-tag" x-text="tag"></small>
+						</template>
+					</div>
 					<p>
 						<span x-text="gig.venue.name"></span>
 						<template x-if="gig.start_time != null">
