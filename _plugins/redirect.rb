@@ -21,7 +21,8 @@ module Redirect
       @name = "index.html"
 
       @data = {
-        "title" => "Redirecting..."
+        "layout" => "redirect",
+        "title" => "Redirecting...",
         "redirect_to" => "/?lat=#{location["lat"]}&lng=#{location["lng"]}"
       }
     end
