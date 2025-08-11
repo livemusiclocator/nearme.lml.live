@@ -14,7 +14,7 @@ module Redirect
     def initialize(site, location)
       @site = site
       @base = site.source
-      @dir = "/#{location["guid"]}"
+      @dir = "/location/#{location["guid"]}"
 
       @basename = "index"
       @ext = ".html"
