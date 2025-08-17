@@ -3,7 +3,10 @@
 module Redirect
   class Generator < Jekyll::Generator
     def generate(site)
-      locations = site.data["locations"]
+      locations = site
+        .data["locations"]
+        .filter { |location| location["lat"] && location["lng"] }
+
       locations.each do |location|
         site.pages << RedirectPage.new(site, location)
       end
