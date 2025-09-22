@@ -8,8 +8,8 @@
   lat: -37.77765981980247
   lng: -37.77765981980247
 - guid: 0e498058-c1ce-4478-9265-908c66fd48a4
-  lat: null
-  lng: null
+  lat: -37.77765981980247
+  lng: -37.77765981980247
 - guid: 0fd88897-e109-48c6-af24-a001e3499d75
   lat: null
   lng: null
@@ -17,6 +17,9 @@
   lat: null
   lng: null
 - guid: 1275961b-0f23-47bd-9b7c-f30f248a0009
+  lat: null
+  lng: null
+- guid: 1397b6ff-4c78-4293-ba70-655bccac9a51
   lat: null
   lng: null
 - guid: 1ab01ade-cf6e-4f4b-9500-6809de17fef3
@@ -40,6 +43,9 @@
 - guid: 346e8407-f4d4-49d7-8c84-6b4f6e48da99
   lat: null
   lng: null
+- guid: 34e1e357-d694-46eb-a92b-72af6ba2ec8f
+  lat: null
+  lng: null
 - guid: 39759e63-3116-4e07-9507-541e56b262bd
   lat: null
   lng: null
@@ -59,6 +65,9 @@
   lat: -37.87014415351597
   lng: 144.98114427116383
 - guid: 41ee4f4f-e88b-4002-b8c8-677a0b0a1ca8
+  lat: null
+  lng: null
+- guid: 43712b91-dda2-4259-9a0b-5f26c6cfa775
   lat: null
   lng: null
 - guid: 461cb87b-8a4c-42c2-a354-83559272efd2
@@ -83,6 +92,12 @@
   lat: null
   lng: null
 - guid: 69e8786e-dfc9-4433-8940-f8545543c623
+  lat: null
+  lng: null
+- guid: 6c0c8b47-d847-4323-b033-d2a026aa7137
+  lat: null
+  lng: null
+- guid: 6d6c9e53-09f6-4076-b80a-70211fcdfbb7
   lat: null
   lng: null
 - guid: 7441a6c5-2257-43ac-94e8-b660c2488845
@@ -139,6 +154,9 @@
 - guid: a7936c70-daca-4cd6-bb8b-da182c6d3478
   lat: null
   lng: null
+- guid: a99645c0-e535-413b-806f-aa5b213133c8
+  lat: null
+  lng: null
 - guid: ade6e867-fb30-42a9-9ebe-d84f8c04d94e
   lat: null
   lng: null
@@ -166,6 +184,9 @@
 - guid: c4571486-2421-4ae1-90ea-4416109ff7cc
   lat: null
   lng: null
+- guid: c4887dcc-44ea-4f16-9134-6283cc8cffdd
+  lat: null
+  lng: null
 - guid: c5cb68b1-bbaa-4077-a9e6-f8202c73b685
   lat: null
   lng: null
@@ -181,13 +202,22 @@
 - guid: d11676da-faea-4389-9afa-590084672486
   lat: null
   lng: null
+- guid: d209887b-0be0-4fa0-838a-76f281fda781
+  lat: null
+  lng: null
 - guid: d4c64431-a92f-4bbe-8c48-8b86cb6db563
+  lat: null
+  lng: null
+- guid: dab1aeb4-a32d-4b8b-92de-1cf2d28b2aba
   lat: null
   lng: null
 - guid: df9e3717-dfd2-4989-a2c2-fcf8c851e6ca
   lat: null
   lng: null
 - guid: e539c766-25d5-4ab6-aae7-0583bf411550
+  lat: null
+  lng: null
+- guid: ec791970-6cf8-4384-b493-6fc255a1f268
   lat: null
   lng: null
 - guid: f0d2ba76-8a51-4d9d-8276-d175f3992f1c
